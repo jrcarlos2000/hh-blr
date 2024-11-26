@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
-const SendToken = () => {
+interface SendTokenProps {
+  setIsNext: (isNext: boolean) => void;
+}
+
+const SendToken = ({ setIsNext }: SendTokenProps) => {
   // State management
   const [amount, setAmount] = useState<number | null>(null);
   const [selectedToken, setSelectedToken] = useState({
@@ -39,7 +43,7 @@ const SendToken = () => {
   };
 
   return (
-    <div className="w-[50%] mx-auto bg-[#161616] p-6 text-white">
+    <div className="h-full mx-auto bg-[#161616] p-6 text-white">
       {/* Header */}
       <div className="flex flex-col">
         <div className="flex items-center gap-3 ">
@@ -190,11 +194,7 @@ const SendToken = () => {
       <button
         className={`${amount != null && amount > 0 && selectedRecipient != null ? "next-button-bg border-[2.5px] border-[c4aeff]" : "bg-[#474747]"} w-full  text-xl py-4 rounded-lg mt-4 transition-colors`}
         onClick={() => {
-          console.log({
-            amount,
-            token: selectedToken,
-            recipient: selectedRecipient,
-          });
+          setIsNext(true);
         }}
       >
         Next
