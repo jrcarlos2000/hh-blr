@@ -132,3 +132,22 @@ p {
     clip-path: polygon(100% 100%, 100% 0, 90% 100%);
   }
 }
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    rgba(221, 142, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.next-button-bg {
+  background: linear-gradient(180deg, #552cd1 0%, #35176b 100%);
+}
+
+.customize-caret {
+  caret-color: rgba(213, 106, 255, 1);
+}
